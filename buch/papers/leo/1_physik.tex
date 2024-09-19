@@ -14,9 +14,7 @@ Die Zustands- und Steuervariablen sind entscheidend für die Berechnung einer m�
 Sie beschreiben den aktuellen Zustand der Rakete und die Steuerungseingaben, die verwendet werden, um die gewünschte Flugbahn zu erreichen. 
 
 Das Ziel ist es, zu jedem Zeitpunkt während des Aufstiegs die Position, Geschwindigkeit und Flugrichtung der Rakete zu kennen und kontrollieren zu können. 
-Die Rakete startet senkrecht vom Boden (Meereshöhe) aus dem Stillstand und muss schließlich eine horizontale Flugrichtung sowie eine ausreichende Geschwindigkeit erreichen, um im Orbit zu bleiben. 
-
-Die wichtigsten Zustands- und Steuervariablen sind:
+Die Rakete startet senkrecht vom Boden (Meereshöhe) aus dem Stillstand und muss schliesslich eine horizontale Flugrichtung sowie eine ausreichende Geschwindigkeit erreichen, um im Orbit zu bleiben. Die wichtigsten Zustands- und Steuervariablen sind:
 
 \begin{itemize}
 	\item \(\alpha\): Steuerungswinkel relativ zur momentanen Raketenrichtung (Pitch),
@@ -47,7 +45,7 @@ In Abbildung\,\ref{fig:leo:forces} sind diese Zustands- und Steuervariablen ansc
 
 Die Dynamik einer Rakete im Aufstieg zum Orbit wird durch eine Reihe von Differentialgleichungen beschrieben, die auf den grundlegenden physikalischen Gesetzen der Mechanik beruhen. 
 Diese Gleichungen stellen das Kräftegleichgewicht dar, dem die Rakete unterliegt, und hängen von den Zustands- und Steuervariablen ab, die in Abschnitt \ref{leo:section:variabeln} eingeführt wurden. 
-Die Bewegungsgleichungen, die in dieser Arbeit verwendet werden, basieren auf den ausführlichen Herleitungen aus \cite{leo:astronautics}, insbesondere aus dem Kapitel "Equations of Motion". 
+Die Bewegungsgleichungen, die in dieser Arbeit verwendet werden, basieren auf den ausführlichen Herleitungen aus \cite{leo:astronautics}, insbesondere aus dem Kapitel ``Equations of Motion''. 
 Im Folgenden werden diese Gleichungen vereinfacht dargestellt, um ein grundlegendes Verständnis zu vermitteln.
 
 \subsubsection{Geschwindigkeitsänderung \(\dot{v}\)}
@@ -62,10 +60,11 @@ gegeben, wobei:
 	\item \(m\) die aktuelle Masse der Rakete ist, die durch den Treibstoffverbrauch ständig abnimmt,
 	\item \(\alpha\) der Steuerungswinkel ist, der beschreibt, wie viel der Schubkraft tatsächlich für die Beschleunigung in Flugrichtung genutzt wird,
 	\item \(D\) der Luftwiderstand ist, der der Vorwärtsbewegung entgegenwirkt,
-	\item \(g \sin \gamma\) die Gravitationskraftkomponente ist, die der Bewegung entgegenwirkt, abhängig vom Winkel \(\gamma\) zum Horizont.
+	\item \(g \sin \gamma\) die Gravitationskraft ist, die der Rakete entgegenwirkt, abhängig vom Winkel \(\gamma\) zum Horizont.
+    \item \(r\) und \(R_{\oplus}\) sind die Distanz vom Planetenzentrum zur Rakete und zur Planetenoberfläche.
 \end{itemize}
-Diese Gleichung beschreibt die Netto-Beschleunigung der Rakete, indem der Schub gegen die widerstehenden Kräfte, wie Luftwiderstand und Schwerkraft, abgewogen wird. 
-Der Steuerungswinkel \(\alpha\) beeinflusst, wie effektiv der Schub in Vorwärtsbewegung umgewandelt wird.
+Diese Gleichung beschreibt die Netto-Beschleunigung der Rakete. Der Steuerungswinkel \(\alpha\) beeinflusst, wie effektiv der Schub in Vorwärtsbewegung umgewandelt wird. Dieser Schub wirkt entgegen dem Luftwiderstand und der Schwerkraft. 
+
 
 \subsubsection{Änderung des Flugwinkels \(\dot{\gamma}\)}
 Die Änderung des Flugwinkels \(\gamma\), der den Winkel der Rakete zum lokalen Horizont beschreibt, ist durch die Gleichung
@@ -116,36 +115,36 @@ Sie ermöglichen es, die Raketenflugbahn präzise zu berechnen und gleichzeitig 
 
 
 \subsection{Orbit \label{leo:orbit}}
-Ein Raumfahrzeug in einem Orbit um einen Planeten verhält sich ähnlich wie ein geschwungener Gegenstand an einer Kette. 
-Die notwendige Geschwindigkeit, damit ein Raumfahrzeug in einer stabilen Umlaufbahn bleibt, lässt sich berechnen mit:
+Ein Raumfahrzeug in einem Orbit um einen Planeten verhält sich ähnlich wie ein Gegenstand, welcher an einem Seil im Kreis geschwungen wird. 
+Die notwendige Geschwindigkeit, damit ein Raumfahrzeug in einer stabilen Umlaufbahn bleibt, lässt sich berechnen mit
 \[
 v = \sqrt{\frac{\mu}{r}},
 \]
 wobei \(r\) der Radius vom Mittelpunkt des Planeten bis zur Rakete und \(\mu\) der Gravitationsparameter des Planeten ist. 
-Für die Erde beträgt der Gravitationsparameter \(\mu_{Erde} = GM_{Erde} = 3.99 \times 10^5 \, km^3/s^2\). Raumfahrzeuge in niedrigen Umlaufbahnen (Low Earth Orbit, LEO), wie etwa die Internationale Raumstation (ISS), befinden sich typischerweise in einer Höhe von etwa 400\,km und benötigen eine Geschwindigkeit von etwa \(7.67 \, km/s\), um im Orbit zu bleiben.
+Für die Erde beträgt der Gravitationsparameter \(\mu_{\oplus} = GM_{\oplus} = 3.99 \times 10^5 \, \text{km}^3/\text{s}^2\). Raumfahrzeuge in niedrigen Umlaufbahnen (Low Earth Orbit, LEO), wie etwa die Internationale Raumstation (ISS), befinden sich typischerweise in einer Höhe von etwa 400\,km und benötigen eine Geschwindigkeit von etwa 7.67\,km/s, um im Orbit zu bleiben.
 
 \subsection{Schwerkraft}
-Die Schwerkraft ist eine der größten Kräfte, die eine Rakete während des Aufstiegs überwinden muss. 
+Die Schwerkraft ist die grösste Kräfte, die eine Rakete während des Aufstiegs überwinden muss von der Erde. 
 Sie nimmt mit zunehmender Höhe ab, aber die Rakete muss genügend Geschwindigkeit aufbauen, um der Schwerkraft dauerhaft zu entkommen und eine stabile Umlaufbahn zu erreichen. 
-Die Schwerkraft bremst die Rakete ab, was durch folgende Gleichung beschrieben wird:
+Die Schwerkraft bremst die Rakete ab, was durch die Gleichung
 \[
-v_g = \int_0^t g \sin(\gamma) \, dt,
+v_g = \int_0^t g \sin(\gamma) \, dt
 \]
-wobei \(g\) die Gravitationskraft und \(\gamma\) der Flugwinkel ist. 
+beschrieben wird, wobei \(g\) die Gravitationskraft und \(\gamma\) der Flugwinkel ist. 
 Entscheidend ist, ob die Rakete den Schub direkt gegen die Schwerkraft ausübt, was in der Berechnung der Flugbahn berücksichtigt wird.
 
 \subsection{Atmosphäre}
 Der Luftwiderstand \(D(t)\), der auf die Rakete wirkt, ist abhängig von der Geschwindigkeit sowie der Luftdichte. 
-Die Luftdichte \(\rho(y)\) nimmt mit der Höhe \(y\) ab. Der Luftwiderstand lässt sich mit folgender Gleichung berechnen:
+Die Luftdichte \(\rho(y)\) nimmt mit der Höhe \(y\) ab. Der Luftwiderstand lässt sich mit
 \[
-D(t) = \frac{1}{2} \rho(y(t)) C_d A v^2(t),
+D(t) = \frac{1}{2} \rho(y(t)) C_d A v^2(t)
 \]
-wobei \(C_d\) der Luftwiderstandsbeiwert und \(A\) die Querschnittsfläche des Fahrzeugs ist. 
+berechnen, wobei \(C_d\) der Luftwiderstandsbeiwert und \(A\) die Querschnittsfläche des Fahrzeugs ist. 
 Der Luftwiderstand ist besonders in den dichten Schichten der Atmosphäre relevant und nimmt mit steigender Höhe ab. 
-Dieser Strömungsverlust kann in Form einer Geschwindigkeit \(v_l\) ausgedrückt werden:
+Dieser Strömungsverlust kann in Form einer Geschwindigkeit
 \[
-v_l = \frac{1}{H} \int_0^{t_f} k_D v^2 e^{-\frac{h}{H}} \, dt,
+v_l = \frac{1}{H} \int_0^{t_f} k_D v^2 e^{-\frac{h}{H}} \, dt
 \]
-wobei \(H\) eine charakteristische Höhe und \(k_D\) ein konstanter Strömungskoeffizient ist.
+ausgedrückt werden, wobei \(H\) eine charakteristische Höhe und \(k_D\) ein konstanter Strömungskoeffizient ist.
 
 
