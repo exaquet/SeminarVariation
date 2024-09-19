@@ -69,9 +69,10 @@ Diese Bedingung garantiert, dass die Steuerstrategie den minimalen Treibstoffver
 Der Raketenaufstieg lässt sich als \textit{optimales Steuerungsproblem} formulieren, bei dem die Steuerfunktion \( u(t) \) die Bahnfunktionen \( x(t) \) beeinflusst. Das Ziel ist es, ein Kostenfunktional zu minimieren, welches den Treibstoffverbrauch sowie andere Verlustmechanismen, wie Steuer- und Schwerkraftverluste, umfasst.
 
 \subsubsection{Steuerfunktionen \( u(t) \)}
-Die Steuerfunktion \( u(t) \) beschreibt die Parameter, die aktiv verändert werden können, um den optimalen Aufstieg zu erreichen. In unserem Fall ist die Steuerfunktion \( u(t) \) der \textit{Schubwinkel} \( \alpha(t) \), der den Neigungswinkel des Schubvektors der Rakete relativ zur momentanen Flugrichtung angibt. Diese Steuerung erfolgt durch das Pitchover-Manöver, das bereits in Abschnitt \textbf{18.1.3} eingeführt wurde. Die Optimierung des Steuerwinkels \( \alpha(t) \) zielt darauf ab, die Verluste durch Schwerkraft und Luftwiderstand zu minimieren, während die Rakete die angestrebte Umlaufbahn erreicht.
 
-Die entsprechende Bewegungsgleichung für die Änderung des Flugwinkels \( \dot{\gamma} \), die in Abschnitt \textbf{18.1.3} behandelt wurde, lautet:
+Die Steuerfunktion \( u(t) \) beschreibt die Parameter, die aktiv verändert werden können, um den optimalen Aufstieg zu erreichen. In unserem Fall ist die Steuerfunktion \( u(t) \) der \textit{Schubwinkel} \( \alpha(t) \), der den Neigungswinkel des Schubvektors der Rakete relativ zur momentanen Flugrichtung angibt. Diese Steuerung erfolgt durch das Pitch-Manöver, das in Abschnitt \ref{leo:section:variabeln} eingeführt wurde. Die Optimierung des Steuerwinkels \( \alpha(t) \) zielt darauf ab, die Verluste durch Schwerkraft und Luftwiderstand zu minimieren, während die Rakete die angestrebte Umlaufbahn erreicht.
+
+Die entsprechende Bewegungsgleichung für die Änderung des Flugwinkels \( \dot{\gamma} \), die in Abschnitt \ref{leo:section:beweungsgleichungen} behandelt wurde, lautet
 \[
 \dot{\gamma} = \frac{1}{v} \left( \frac{F_*}{m} \sin \alpha + \frac{L}{m} - \left( g - \frac{v^2}{r} \right) \cos \gamma \right),
 \]
@@ -84,11 +85,10 @@ Die Bahnfunktionen \( x(t) \) umfassen die \textit{Position} und \textit{Geschwi
 x(t) = \begin{pmatrix} h(t) \\ x(t) \\ v(t) \\ \gamma(t) \end{pmatrix}.
 \]
 
-Die Dynamik dieses Systems wird durch die Bewegungsgleichungen beschrieben, die bereits in Abschnitt \textbf{18.1} eingeführt wurden. Diese beinhalten beispielsweise die Änderungsraten der Höhe und der horizontalen Position der Rakete:
+Die Dynamik dieses Systems wird durch die Bewegungsgleichungen beschrieben, die in Abschnitt \ref{leo:section:beweungsgleichungen} eingeführt wurden. Diese beinhalten beispielsweise die Änderungsraten der Höhe und der horizontalen Position der Rakete
 \[
-\dot{h} = v \sin \gamma, \quad \dot{x} = v \cos \gamma,
-\]
-wie in Abschnitt \textbf{18.1.3} beschrieben.
+\dot{h} = v \sin \gamma, \quad \dot{x} = v \cos \gamma
+\].
 
 \subsubsection{Kostenfunktional}
 Das Kostenfunktional beschreibt das Ziel der Optimierung. Für das Raketenproblem ist dies der Treibstoffverbrauch und die Verluste, die während des Aufstiegs minimiert werden sollen. Das Kostenfunktional lässt sich durch ein Integral der Form
@@ -97,22 +97,23 @@ J(u) = \int_{t_0}^{t_f} L(x(t), u(t)) \, dt
 \]
 darstellen, wobei \( L(x(t), u(t)) \) die \textit{Laufkostenfunktion} darstellt, die den Treibstoffverbrauch, Steuerverluste und Schwerkraftverluste beschreibt.
 
-Wie bereits in Abschnitt \textbf{18.3} eingeführt, werden diese Verluste durch folgende Gleichung beschrieben:
+Wie in Abschnitt \ref{leo:section:aufstiegsgleichung} eingeführt, werden diese Verluste durch folgende die Gleichung
 \[
 v_f = v_* \ln \left(\frac{m_0}{m_f}\right) - 2F_* \int_0^{t_f} \frac{\sin^2\left(\frac{\alpha}{2}\right)}{m} \, dt - \dots
 \]
-Hierbei müssen die Steuerverluste, die durch den Schubwinkel \( \alpha(t) \) beeinflusst werden, minimiert werden.
+beschrieben. Hierbei müssen die Steuerverluste, die durch den Schubwinkel \( \alpha(t) \) beeinflusst werden, minimiert werden.
 
 \subsubsection{Randbedingungen}
 Die Randbedingungen legen fest, welche Anfangs- und Endwerte für die Rakete während des Aufstiegs gelten. Zu Beginn des Fluges (bei \( t_0 \)) startet die Rakete vom Boden, was durch die Anfangsbedingungen
 \[
 h(t_0) = 0, \quad v(t_0) = 0
 \]
-festgelegt ist. Am Ende des Fluges (bei \( t_f \)) muss die Rakete eine vorgegebene Höhe \( h(t_f) \) sowie die Endgeschwindigkeit \( v(t_f) \) erreichen, um in die Umlaufbahn zu gelangen:
+festgelegt ist. Am Ende des Fluges (bei \( t_f \)) muss die Rakete eine vorgegebene Höhe \( h(t_f) \) sowie die Endgeschwindigkeit \( v(t_f) \) erreichen
 \[
 h(t_f) = H, \quad v(t_f) = v_{orbit}.
-\]
+\],
+um in die Umlaufbahn zu gelangen.
 Diese Bedingungen stellen sicher, dass die Rakete den gewünschten Orbit erreicht, während das Kostenfunktional \( J(u) \) minimiert wird.
-Die Randbedingungen, wie die gewünschte Höhe und Geschwindigkeit, wurden bereits in Abschnitt \textbf{18.2.2} in Verbindung mit der Orbitalmechanik behandelt.
+Die Randbedingungen, wie die gewünschte Höhe und Geschwindigkeit, wurden in Abschnitt \ref{leo:orbit} in Verbindung mit der Orbitalmechanik behandelt.
 
 Das Steuerungsproblem der Rakete zeigt die Komplexität der Steuerung in der Raumfahrt auf, bei der verschiedene Einflüsse wie Schwerkraft und Luftwiderstand berücksichtigt werden müssen. Eine genaue Lösung dieses Problems erfordert numerische Methoden, um die optimalen Steuerfunktionen zu berechnen.
