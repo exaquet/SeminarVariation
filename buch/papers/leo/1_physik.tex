@@ -121,40 +121,40 @@ Die Herleitung dieser Gleichungen basiert auf den grundlegenden Prinzipien der N
 Die Bewegungsgleichungen sind daher eine direkte Folge des Kräftegleichgewichts, kombiniert mit der dynamischen Masseänderung und der Schubsteuerung. 
 Sie ermöglichen es, die Raketenflugbahn präzise zu berechnen und gleichzeitig die Steuerungsparameter zu optimieren.
 
+%
+%\subsection{Orbit \label{leo:orbit}}
+%Ein Raumfahrzeug in einem Orbit um einen Planeten verhält sich ähnlich wie ein Gegenstand, welcher an einem Seil im Kreis geschwungen wird. 
+%Die notwendige Geschwindigkeit, damit ein Raumfahrzeug in einer stabilen Umlaufbahn bleibt, lässt sich berechnen mit
+%\[
+%v = \sqrt{\frac{\mu}{r}},
+%\]
+%wobei \(r\) der Radius vom Mittelpunkt des Planeten bis zur Rakete und \(\mu\) der Gravitationsparameter des Planeten ist. 
+%
+%Für die Erde beträgt der Gravitationsparameter $\mu_{\text{Erde}} = GM_{\text{Erde}} = 3.99 \cdot 10^5\,\text{km}^3/\text{s}^2$. 
+%Raumfahrzeuge in niedrigen Umlaufbahnen (Low Earth Orbit, LEO), wie etwa die Internationale Raumstation (ISS), befinden sich typischerweise in einer Höhe von etwa 400\,km und benötigen eine Geschwindigkeit von etwa 7.67\,km/s, um im Orbit zu bleiben.
 
-\subsection{Orbit \label{leo:orbit}}
-Ein Raumfahrzeug in einem Orbit um einen Planeten verhält sich ähnlich wie ein Gegenstand, welcher an einem Seil im Kreis geschwungen wird. 
-Die notwendige Geschwindigkeit, damit ein Raumfahrzeug in einer stabilen Umlaufbahn bleibt, lässt sich berechnen mit
-\[
-v = \sqrt{\frac{\mu}{r}},
-\]
-wobei \(r\) der Radius vom Mittelpunkt des Planeten bis zur Rakete und \(\mu\) der Gravitationsparameter des Planeten ist. 
+%\subsection{Schwerkraft}
+%Die Schwerkraft ist die grösste Kräfte, die eine Rakete während des Aufstiegs überwinden muss von der Erde. 
+%Sie nimmt mit zunehmender Höhe ab, aber die Rakete muss genügend Geschwindigkeit aufbauen, um der Schwerkraft dauerhaft zu entkommen und eine stabile Umlaufbahn zu erreichen. 
+%Die Schwerkraft bremst die Rakete ab, was durch die Gleichung
+%\[
+%v_g = \int_0^t g \sin(\gamma) \, dt
+%\]
+%beschrieben wird, wobei \(g\) die Gravitationskraft und \(\gamma\) der Flugwinkel ist. 
+%Entscheidend ist, ob die Rakete den Schub direkt gegen die Schwerkraft ausübt, was in der Berechnung der Flugbahn berücksichtigt wird.
 
-Für die Erde beträgt der Gravitationsparameter $\mu_{\text{Erde}} = GM_{\text{Erde}} = 3.99 \cdot 10^5\,\text{km}^3/\text{s}^2$. 
-Raumfahrzeuge in niedrigen Umlaufbahnen (Low Earth Orbit, LEO), wie etwa die Internationale Raumstation (ISS), befinden sich typischerweise in einer Höhe von etwa 400\,km und benötigen eine Geschwindigkeit von etwa 7.67\,km/s, um im Orbit zu bleiben.
-
-\subsection{Schwerkraft}
-Die Schwerkraft ist die grösste Kräfte, die eine Rakete während des Aufstiegs überwinden muss von der Erde. 
-Sie nimmt mit zunehmender Höhe ab, aber die Rakete muss genügend Geschwindigkeit aufbauen, um der Schwerkraft dauerhaft zu entkommen und eine stabile Umlaufbahn zu erreichen. 
-Die Schwerkraft bremst die Rakete ab, was durch die Gleichung
-\[
-v_g = \int_0^t g \sin(\gamma) \, dt
-\]
-beschrieben wird, wobei \(g\) die Gravitationskraft und \(\gamma\) der Flugwinkel ist. 
-Entscheidend ist, ob die Rakete den Schub direkt gegen die Schwerkraft ausübt, was in der Berechnung der Flugbahn berücksichtigt wird.
-
-\subsection{Atmosphäre}
-Der Luftwiderstand \(D(t)\), der auf die Rakete wirkt, ist abhängig von der Geschwindigkeit sowie der Luftdichte. 
-Die Luftdichte \(\rho(y)\) nimmt mit der Höhe \(y\) ab. Der Luftwiderstand lässt sich mit
-\[
-D(t) = \frac{1}{2} \rho(y(t)) C_d A v^2(t)
-\]
-berechnen, wobei \(C_d\) der Luftwiderstandsbeiwert und \(A\) die Querschnittsfläche des Fahrzeugs ist. 
-Der Luftwiderstand ist besonders in den dichten Schichten der Atmosphäre relevant und nimmt mit steigender Höhe ab. 
-Dieser Strömungsverlust kann in Form einer Geschwindigkeit
-\[
-v_l = \frac{1}{H} \int_0^{t_f} k_D v^2 e^{-\frac{h}{H}} \, dt
-\]
-ausgedrückt werden, wobei \(H\) eine charakteristische Höhe und \(k_D\) ein konstanter Strömungskoeffizient ist.
+%\subsection{Atmosphäre}
+%Der Luftwiderstand \(D(t)\), der auf die Rakete wirkt, ist abhängig von der Geschwindigkeit sowie der Luftdichte. 
+%Die Luftdichte \(\rho(y)\) nimmt mit der Höhe \(y\) ab. Der Luftwiderstand lässt sich mit
+%\[
+%D(t) = \frac{1}{2} \rho(y(t)) C_d A v^2(t)
+%\]
+%berechnen, wobei \(C_d\) der Luftwiderstandsbeiwert und \(A\) die Querschnittsfläche des Fahrzeugs ist. 
+%Der Luftwiderstand ist besonders in den dichten Schichten der Atmosphäre relevant und nimmt mit steigender Höhe ab. 
+%Dieser Strömungsverlust kann in Form einer Geschwindigkeit
+%\[
+%v_l = \frac{1}{H} \int_0^{t_f} k_D v^2 e^{-\frac{h}{H}} \, dt
+%\]
+%ausgedrückt werden, wobei \(H\) eine charakteristische Höhe und \(k_D\) ein konstanter Strömungskoeffizient ist.
 
 
