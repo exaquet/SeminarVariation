@@ -38,7 +38,7 @@ wobei \(L(x(t), u(t))\) die Laufkostenfunktion darstellt, die Treibstoffverbrauc
 
 In Kapitel \ref{buch:hamiltonjacobi:section:oc} wird das optimale Steuerungsproblem als Minimierungsproblem eines Integrals dargestellt, das die Steuerkosten über die Zeit aufintegriert. Für das Raketenproblem bedeutet dies, dass der Treibstoffverbrauch minimiert werden soll, während die Randbedingungen eingehalten werden. Die Lagrange-Funktion \(L(x(t), u(t))\) hängt in diesem Fall von der Position, Geschwindigkeit der Rakete und den Steuergrößen ab.
 
-Ein wichtiger Aspekt der Steuerung sind die \textit{Steuerverluste}, die durch die Kursänderung der Rakete entstehen. Diese Verluste wurden bereits in der Formel \eqref{leo:aufstiegsgleichung} beschrieben:
+Ein wichtiger Aspekt der Steuerung sind die \textit{Steuerverluste}, die durch die Kursänderung der Rakete entstehen. Diese Verluste wurden in der Formel \eqref{leo:aufstiegsgleichung} beschrieben:
 \[
 v_f = v_* \ln \left(\frac{m_0}{m_f}\right) - 2F_* \int_0^{t_f} \frac{\sin^2\left(\frac{\alpha}{2}\right)}{m} \, dt - \dots
 \]
@@ -117,3 +117,14 @@ Diese Bedingungen stellen sicher, dass die Rakete den gewünschten Orbit erreich
 Die Randbedingungen, wie die gewünschte Höhe und Geschwindigkeit, wurden in Abschnitt \ref{leo:orbit} in Verbindung mit der Orbitalmechanik behandelt.
 
 Das Steuerungsproblem der Rakete zeigt die Komplexität der Steuerung in der Raumfahrt auf, bei der verschiedene Einflüsse wie Schwerkraft und Luftwiderstand berücksichtigt werden müssen. Eine genaue Lösung dieses Problems erfordert numerische Methoden, um die optimalen Steuerfunktionen zu berechnen.
+
+
+
+\section{Die optimale Flugbahn}
+
+Urlich Walter sagt in seinem Buch zur Lösung der optimalen Flugbahn folgendes: "Letztendlich basiert eine gute Aufstiegsoptimierung auf ausgefeilter Software, auf der Kenntnis der grundlegenden Aufstiegsmanöver, aber auch auf den Fähigkeiten erfahrener Flugmechaniker und auf Versuch und Irrtum."
+Die Flugbahn ist von so vielen Faktoren abhängig, dass immer noch nicht die genau Flugbahn berechnet werden kann. 
+Oder wie der Witz für viele schwierige Aufgaben in der Wissenschaft geht: "In 10 Jahren sind wir dann so weit."
+
+
+
