@@ -16,7 +16,7 @@ Diese Vereinfachungen haben jedoch direkte Konsequenzen auf die berechnete Flugb
 Im Folgenden werden drei Arten von Verlusten besprochen, die bei einer Vereinfachung vernachlässigt oder isoliert betrachtet werden können: Steuerverluste, Strömungsverluste und Schwerkraftverluste.
 
 
-\paragraph{Steuerverluste} Werden nur die Steuerverluste in für 
+\paragraph{Steuerverluste} Werden nur die Steuerverluste in der Endgeschwindigkeit
 \begin{equation*}
 	v_f = \underbrace{v_* \ln \left(\frac{m_0}{m_f}\right)}_{\text{Raketengleichung}} 
 	- \underbrace{2F_* \int_0^{t_f} \frac{\sin^2\left(\frac{\alpha}{2}\right)}{m} \, dt }_{\text{Steuerverluste}}
@@ -30,12 +30,12 @@ Die Rakete würde also niemals in eine Orbitbahn einlenken.
 Das Fehlen von Steuerung hätte zur Folge, dass die Rakete ihre Flugbahn nicht anpassen würde und eine Umlaufbahn unmöglich wäre. 
 Steuerverluste stellen also einen Kompromiss zwischen Kurskorrekturen und Effizienz dar.
 
-\paragraph{Strömungsverluste} Vernachlässigt man die Steuer und Schwerkraft Verluste in  
+\paragraph{Strömungsverluste} Vernachlässigt man die Steuer- und Schwerkraftverluste in  
 \begin{equation*}
 	v_f = \underbrace{v_* \ln \left(\frac{m_0}{m_f}\right)}_{\text{Raketengleichung}} 
 	- \underbrace{\Cancel[red]{2F_* \int_0^{t_f} \frac{\sin^2\left(\frac{\alpha}{2}\right)}{m} \, dt }}_{\text{Steuerverluste}}
 	- \underbrace{\frac{1}{H} \int_0^{t_f} k_Dv^2 e^{-\frac{h}{H}} \, dt }_{\text{Strömungsverluste}}
-	- \underbrace{\Cancel[red]{\int_0^{t_f} g \sin \left(\gamma\right) \, dt}}_{\text{Schwerkraftverluste}}
+	- \underbrace{\Cancel[red]{\int_0^{t_f} g \sin \left(\gamma\right) \, dt}}_{\text{Schwerkraftverluste}},
 \end{equation*}
 bleiben nur die Strömungsverluste, dadurch würde die Rakete so schnell wie möglich aus der dichten Atmosphäre aufsteigen, um den Luftwiderstand zu minimieren. 
 Der Term $e^{-\frac{h}{H}}$ beschreibt, dass die Luftdichte mit zunehmender Höhe exponentiell abnimmt. 

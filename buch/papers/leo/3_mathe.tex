@@ -95,16 +95,16 @@ wobei \( \alpha(t) \) die Steuerfunktion \( u(t) \) darstellt.
 
 \subsubsection{Bahnfunktionen \( x(t) \)}
 Die Bahnfunktionen \( x(t) \) umfassen die \textit{Position} und \textit{Geschwindigkeit} der Rakete zu jedem Zeitpunkt. 
-Diese Größen werden durch den Zustandsvektor \( x(t) \) beschrieben, der aus den Komponenten Höhe \( h(t) \), horizontaler Position \( x(t) \), Geschwindigkeit \( v(t) \) und Flugwinkel \( \gamma(t) \) besteht:
+Diese Größen werden durch den Zustandsvektor \( x(t) \) beschrieben, der aus den Komponenten Höhe \( h(t) \), horizontaler Position \( s(t) \), Geschwindigkeit \( v(t) \) und Flugwinkel \( \gamma(t) \) besteht:
 
 \[
-x(t) = \begin{pmatrix} h(t) \\ x(t) \\ v(t) \\ \gamma(t) \end{pmatrix}.
+x(t) = \begin{pmatrix} h(t) \\ s(t) \\ v(t) \\ \gamma(t) \end{pmatrix}.
 \]
 
 Die Dynamik dieses Systems wird durch die Bewegungsgleichungen beschrieben, die in Abschnitt \ref{leo:section:beweungsgleichungen} eingeführt wurden. 
 Diese beinhalten beispielsweise die Änderungsraten der Höhe und der horizontalen Position der Rakete
 \[
-\dot{h} = v \sin \gamma, \quad \dot{x} = v \cos \gamma
+\dot{h} = v \sin \gamma, \quad \dot{s} = v \cos \gamma
 \].
 
 \subsubsection{Kostenfunktional}
@@ -115,7 +115,7 @@ J(u) = \int_{t_0}^{t_f} L(x(t), u(t)) \, dt
 \]
 darstellen, wobei \( L(x(t), u(t)) \) die \textit{Laufkostenfunktion} darstellt, die den Treibstoffverbrauch, Steuerverluste und Schwerkraftverluste beschreibt.
 
-Wie in Abschnitt \ref{leo:section:aufstiegsgleichung} eingeführt, werden diese Verluste durch folgende die Gleichung
+Wie in Abschnitt \ref{leo:section:aufstiegsgleichung} eingeführt, werden diese Verluste durch die Gleichung
 \[
 v_f = v_* \ln \left(\frac{m_0}{m_f}\right) - 2F_* \int_0^{t_f} \frac{\sin^2\left(\frac{\alpha}{2}\right)}{m} \, dt - \dots
 \]
@@ -129,7 +129,7 @@ h(t_0) = 0, \quad v(t_0) = 0
 festgelegt ist. 
 Am Ende des Fluges (bei \( t_f \)) muss die Rakete eine vorgegebene Höhe \( h(t_f) \) sowie die Endgeschwindigkeit \( v(t_f) \) erreichen
 \[
-h(t_f) = H, \quad v(t_f) = v_{orbit}
+h(t_f) = H, \quad v(t_f) = v_{\text{orbit}}
 \]
 um in die Umlaufbahn zu gelangen.
 Diese Bedingungen stellen sicher, dass die Rakete den gewünschten Orbit erreicht, während das Kostenfunktional \( J(u) \) minimiert wird.
@@ -139,7 +139,7 @@ Das Steuerungsproblem der Rakete zeigt die Komplexität der Steuerung in der Rau
 
 \section{Die optimale Flugbahn}
 
-Urlich Walter sagt in seinem Buch zur Lösung der optimalen Flugbahn folgendes: ''Letztendlich basiert eine gute Aufstiegsoptimierung auf ausgefeilter Software, auf der Kenntnis der grundlegenden Aufstiegsmanöver, aber auch auf den Fähigkeiten erfahrener Flugmechaniker und auf Versuch und Irrtum.``
+Urlich Walter sagt in seinem Buch \cite{leo:ulrichquote} zur Lösung der optimalen Flugbahn folgendes: ''Letztendlich basiert eine gute Aufstiegsoptimierung auf ausgefeilter Software, auf der Kenntnis der grundlegenden Aufstiegsmanöver, aber auch auf den Fähigkeiten erfahrener Flugmechaniker und auf Versuch und Irrtum.``
 Die Flugbahn ist von so vielen Faktoren abhängig, dass immer noch nicht die genau Flugbahn berechnet werden kann. 
 Oder wie der Witz für viele schwierige Aufgaben in der Wissenschaft geht: ''In 10 Jahren sind wir dann so weit.``
 
